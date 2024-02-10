@@ -1,47 +1,46 @@
 {
-  # Flake inputs
+  description = "A nixvim configuration";
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixvim.url = "github:nix-community/nixvim";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  # Flake outputs
-  outputs = { self, nixpkgs }:
+  outputs =
+    { nixvim
+    , flake-utils
+    , nixpkgs
+    , ...
+    } @ inputs:
     let
-      # Systems supported
-      allSystems = [
-        "x86_64-linux" # 64-bit Intel/AMD Linux
-        "aarch64-linux" # 64-bit ARM Linux
-        "x86_64-darwin" # 64-bit Intel macOS
-        "aarch64-darwin" # 64-bit ARM macOS
-      ];
-
-      # Helper to provide system-specific attributes
-      forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
-      });
+      config = import ./config; # import the module directly
+    in
+    flake-utils.lib.eachDefaultSystem (system:
+    let
+      nixvimLib = nixvim.lib.${system};
+      pkgs = import nixpkgs { inherit system; };
+      nixvim' = nixvim.legacyPackages.${system};
+      nvim = nixvim'.makeNixvimWithModule {
+        inherit pkgs;
+        module = config;
+        # You can use `extraSpecialArgs` to pass additional arguments to your module files
+        extraSpecialArgs = {
+          # inherit (inputs) foo;
+        };
+      };
     in
     {
-      # Development environment output
-      devShells = forAllSystems ({ pkgs }: {
-        default =
-          pkgs.mkShell {
-            # The Nix packages provided in the environment
-            packages = with pkgs; [
-              #...
+      checks = {
+        # Run `nix flake check` to verify that your config is not broken
+        default = nixvimLib.check.mkTestDerivationFromNvim {
+          inherit nvim;
+          name = "Akari";
+        };
+      };
 
-              # Python plus helper tools
-              (python311.withPackages (ps: with ps; [
-                # ...
-              ]))
-            ];
-
-            # Workaround: make vscode's python extension read the .venv
-            shellHook = ''
-              echo "welcome to python" | ${pkgs.lolcat}/bin/lolcat
-              venv="$(cd $(dirname $(which python)); cd ..; pwd)"
-              ln -Tsf "$venv" .venv
-            '';
-          };
-      });
-    };
+      packages = {
+        # Lets you run `nix run` to start nixvim
+        default = nvim;
+      };
+    });
 }
