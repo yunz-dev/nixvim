@@ -4,11 +4,9 @@
       enable = true;
       indent = {
         char = "│"; # "│" or "▎"
+        tabChar = "│";
       };
-      scope = {
-        enabled = true;
-        showStart = true;
-      };
+      scope.enabled = false;
       exclude = {
         buftypes = [ "terminal" "nofile" ];
         filetypes = [

@@ -11,6 +11,11 @@
           };
         };
         cursorword = { delay = 0; };
+
+        indentscope = {
+          symbol = "│";
+          draw.delay = 0;
+        };
       };
     };
     ts-context-commentstring.enable = true;
