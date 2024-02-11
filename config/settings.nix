@@ -52,8 +52,8 @@
       # Enable the sign column to prevent the screen from jumping
       signcolumn = "yes";
 
-      # Reduce which-key timeout to 10ms
-      timeoutlen = 10;
+      # Reduce which-key timeout to 250s
+      timeoutlen = 250;
 
       scrolloff = 8; # Will never have less than 8 characters as you scroll down
       mouse = "a"; # Mouse
