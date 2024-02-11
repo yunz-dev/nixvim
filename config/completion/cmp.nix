@@ -8,6 +8,8 @@
         maxViewEntries = 30;
       };
       snippet.expand = "luasnip";
+      # Preselect first entry
+      completion.completeopt = "menu,menuone,noinsert";
       sources = [
         { name = "nvim_lsp"; } # lsp
         {
@@ -123,7 +125,7 @@
           TypeParameter = "",
         } 
 
-         local cmp = require'cmp'
+     local cmp = require'cmp'
     -- Set configuration for specific filetype.
      cmp.setup.filetype('gitcommit', {
        sources = cmp.config.sources({
@@ -147,5 +149,6 @@
        }, {
          { name = 'cmdline' }
        })
-     })  '';
+     })  
+  '';
 }

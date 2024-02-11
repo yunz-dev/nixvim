@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   config = {
     clipboard.providers.wl-copy.enable = true;
 
