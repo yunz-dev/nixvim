@@ -27,14 +27,14 @@
     ./treesitter/treesitter-textobjects.nix
 
     ./ui/alpha.nix
-    ./ui/noice.nix
+    ./ui/dressing-nvim.nix
     ./ui/flash.nix
+    ./ui/indent-blankline.nix
+    ./ui/lualine.nix
+    ./ui/noice.nix
     ./ui/notify.nix
     ./ui/nui.nix
-    ./ui/indent-blankline.nix
-    ./ui/dressing-nvim.nix
     ./ui/toggleterm.nix
-    ./ui/statusline.nix
     ./ui/whichkey.nix
 
     # ./util/hardtime.nix

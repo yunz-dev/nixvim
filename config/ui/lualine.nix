@@ -4,7 +4,7 @@
     alwaysDivideMiddle = true;
     globalstatus = true; # have a single statusline at bottom of neovim instead of one for every window
     ignoreFocus = [ "neo-tree" ];
-    extensions = [ "neo-tree" "fzf" ];
+    extensions = [ "fzf" ];
     disabledFiletypes.statusline = [ "dashboard" "alpha" ];
     sectionSeparators = {
       left = "";
