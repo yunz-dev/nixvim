@@ -148,7 +148,7 @@
       };
     }
 
-
+    # Toggle options
     {
       mode = "n";
       key = "<leader>ul";
@@ -179,6 +179,7 @@
       };
     }
 
+    # Move Lines
     {
       mode = "n";
       key = "<A-Up>";
@@ -254,6 +255,17 @@
       };
     }
 
+    # Clear search with ESC
+    {
+      mode = [ "n" "i" ];
+      key = "<esc>";
+      action = "<cmd>noh<cr><esc>";
+      options = {
+        silent = true;
+        desc = "Escape and clear hlsearch";
+      };
+    }
+
     # Paste stuff without saving the deleted word into the buffer
     {
       mode = "x";
@@ -290,22 +302,6 @@
       action = "\"_d";
       options = {
         desc = "Delete to void register";
-      };
-    }
-
-    # <C-c> instead of pressing esc just because
-    {
-      mode = "i";
-      key = "<C-c>";
-      action = "<Esc>";
-    }
-
-    {
-      mode = "n";
-      key = "<C-f>";
-      action = "!tmux new tmux-sessionizer<CR>";
-      options = {
-        desc = "Switch between projects";
       };
     }
   ];
