@@ -1,4 +1,3 @@
-# Thanks for the keybinds primeagen and folke!
 {
   globals.mapleader = " ";
 
@@ -85,16 +84,6 @@
       key = "<C-Right>";
       action = "<C-w>l";
       options.desc = "Move To Window Right";
-    }
-
-    {
-      mode = "n";
-      key = "<leader>ww";
-      action = "<C-W>p";
-      options = {
-        silent = true;
-        desc = "Other window";
-      };
     }
 
     {
@@ -240,8 +229,7 @@
       key = "n";
       action = "nzzzv";
       options = {
-        desc = "Allow search terms to stay in the middle
-";
+        desc = "Allow search terms to stay in the middle";
       };
     }
 
@@ -250,8 +238,7 @@
       key = "N";
       action = "Nzzzv";
       options = {
-        desc = "Allow search terms to stay in the middle
-";
+        desc = "Allow search terms to stay in the middle";
       };
     }
 
@@ -281,15 +268,6 @@
       mode = [ "n" "v" ];
       key = "<leader>y";
       action = "\"+y";
-      options = {
-        desc = "Copy to system clipboard";
-      };
-    }
-
-    {
-      mode = [ "n" "v" ];
-      key = "<leader>Y";
-      action = "\"+Y";
       options = {
         desc = "Copy to system clipboard";
       };

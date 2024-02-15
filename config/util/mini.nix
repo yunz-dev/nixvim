@@ -10,8 +10,10 @@
             '';
           };
         };
+        # Highlight word under cursor
         cursorword = { delay = 0; };
 
+        # Show indent lines
         indentscope = {
           symbol = "│";
           draw.delay = 0;
