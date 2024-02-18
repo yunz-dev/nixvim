@@ -1,9 +1,6 @@
 {
   plugins.flash = {
     enable = true;
-    search = {
-      mode = "fuzzy";
-    };
     label.uppercase = false;
   };
   keymaps = [

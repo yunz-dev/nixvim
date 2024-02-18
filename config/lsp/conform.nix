@@ -13,10 +13,10 @@
       nix = [ "nixpkgs_fmt" ];
       html = [ [ "prettier" ] ];
       css = [ [ "prettier" ] ];
-      javascript = [ [ "prettier" ] ];
-      javascriptreact = [ [ "prettier" ] ];
-      typescript = [ [ "prettier" ] ];
-      typescriptreact = [ [ "prettier" ] ];
+      javascript = [ [ "eslint_d" ] ];
+      javascriptreact = [ [ "eslint_d" ] ];
+      typescript = [ [ "eslint_d" ] ];
+      typescriptreact = [ [ "eslint_d" ] ];
       markdown = [ [ "prettier" ] ];
       rust = [ "rustfmt" ];
       # Use the "_" filetype to run formatters on filetypes that don't have other formatters configured.

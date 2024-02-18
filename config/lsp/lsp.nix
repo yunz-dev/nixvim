@@ -46,6 +46,7 @@
             };
           };
         };
+        eslint.enable = true;
         pyright.enable = true;
         ruff-lsp.enable = true;
         tailwindcss.enable = true;
