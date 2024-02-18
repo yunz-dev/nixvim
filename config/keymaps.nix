@@ -197,49 +197,59 @@
       options.desc = "Move line Down";
     }
 
+    # Better indenting
+    {
+      mode = "v";
+      key = "<";
+      action = "<gv";
+    }
+
+    {
+      mode = "v";
+      key = ">";
+      action = ">gv";
+    }
+
+    {
+      mode = "i";
+      key = "<C-a>";
+      action = "<cmd> norm! ggVG<cr>";
+      options.desc = "Select all lines in buffer";
+    }
+
     {
       mode = "n";
       key = "J";
       action = "mzJ`z";
-      options = {
-        desc = "Allow cursor to stay in the same place after appending to current line ";
-      };
+      options.desc = "Allow cursor to stay in the same place after appending to current line ";
     }
 
     {
       mode = "n";
       key = "<C-d>";
       action = "<C-d>zz";
-      options = {
-        desc = "Allow C-d and C-u to keep the cursor in the middle";
-      };
+      options.desc = "Allow C-d and C-u to keep the cursor in the middle";
     }
 
     {
       mode = "n";
       key = "<C-u>";
       action = "<C-u>zz";
-      options = {
-        desc = "Allow C-d and C-u to keep the cursor in the middle";
-      };
+      options.desc = "Allow C-d and C-u to keep the cursor in the middle";
     }
 
     {
       mode = "n";
       key = "n";
       action = "nzzzv";
-      options = {
-        desc = "Allow search terms to stay in the middle";
-      };
+      options.desc = "Allow search terms to stay in the middle";
     }
 
     {
       mode = "n";
       key = "N";
       action = "Nzzzv";
-      options = {
-        desc = "Allow search terms to stay in the middle";
-      };
+      options.desc = "Allow search terms to stay in the middle";
     }
 
     # Clear search with ESC
@@ -258,9 +268,7 @@
       mode = "x";
       key = "p";
       action = "\"_dP";
-      options = {
-        desc = "Deletes to void register and paste over";
-      };
+      options.desc = "Deletes to void register and paste over";
     }
 
     # Copy stuff to system clipboard with <leader> + y or just y to have it just in vim
@@ -268,9 +276,7 @@
       mode = [ "n" "v" ];
       key = "<leader>y";
       action = "\"+y";
-      options = {
-        desc = "Copy to system clipboard";
-      };
+      options.desc = "Copy to system clipboard";
     }
 
     # Delete to void register
@@ -278,9 +284,7 @@
       mode = [ "n" "v" ];
       key = "<leader>D";
       action = "\"_d";
-      options = {
-        desc = "Delete to void register";
-      };
+      options.desc = "Delete to void register";
     }
   ];
   extraConfigLua = ''
@@ -289,21 +293,27 @@
       vim.wo.number = false
     else
       vim.wo.number = true
-        vim.wo.relativenumber = false
-        end
-        end
+      vim.wo.relativenumber = false
+      end
+    end
 
-        function ToggleRelativeLineNumber()
-        if vim.wo.relativenumber then
-          vim.wo.relativenumber = false
-        else
-          vim.wo.relativenumber = true
-            vim.wo.number = false
-            end
-            end
+    function ToggleRelativeLineNumber()
+    if vim.wo.relativenumber then
+      vim.wo.relativenumber = false
+    else
+      vim.wo.relativenumber = true
+      vim.wo.number = false
+      end
+    end
 
-            function ToggleWrap()
-            vim.wo.wrap = not vim.wo.wrap
-            end
+    function ToggleWrap()
+        vim.wo.wrap = not vim.wo.wrap
+    end
+
+     if vim.lsp.inlay_hint then
+       vim.keymap.set('n', '<leader>uh', function()
+         vim.lsp.inlay_hint(0, nil)
+       end, { desc = 'Toggle Inlay Hints' })
+     end
   '';
 }

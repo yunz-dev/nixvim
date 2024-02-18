@@ -38,7 +38,7 @@
     }
     {
       mode = "n";
-      key = "<leader>xQ";
+      key = "<leader>xq";
       action = "<cmd>TodoQuickFix<cr>";
       options = {
         silent = true;

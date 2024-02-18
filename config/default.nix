@@ -1,4 +1,7 @@
 {
+
+  enableMan = false;
+
   # Import all your configuration modules here
   imports = [
     ./bufferline
@@ -47,6 +50,7 @@
     ./util/persistence.nix
     ./util/project-nvim.nix
 
+    ./autocmd.nix
     ./keymaps.nix
     ./settings.nix
   ];
