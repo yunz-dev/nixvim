@@ -1,41 +1,38 @@
 {
   plugins = {
-    nvim-cmp = {
+    cmp = {
       enable = true;
-      experimental.ghost_text = true;
-      performance = {
-        fetchingTimeout = 200;
-        maxViewEntries = 30;
-      };
-      snippet.expand = "luasnip";
       # Preselect first entry
-      completion.completeopt = "menu,menuone,noinsert";
-      sources = [
-        { name = "nvim_lsp"; } # lsp
-        {
-          name = "buffer";
-          # Words from other open buffers can also be suggested.
-          option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          keywordLength = 3;
-        }
-        { name = "path"; }
-        {
-          name = "luasnip";
-          keywordLength = 3;
-        }
-      ];
+      settings = {
+        completion.completeopt = "menu,menuone,noinsert";
+        sources = [
+          { name = "nvim_lsp"; } # lsp
+          {
+            name = "buffer";
+            # Words from other open buffers can also be suggested.
+            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            keywordLength = 3;
+          }
+          { name = "path"; }
+          {
+            name = "luasnip";
+            keywordLength = 3;
+          }
+        ];
 
-      window = {
-        completion = {
-          border = "rounded";
-          # winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+        window = {
+          completion = {
+            border = "rounded";
+            # winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+          };
+          documentation = {
+            border = "rounded";
+          };
         };
-        documentation = {
-          border = "rounded";
-        };
+        experimental.ghost_text = true;
       };
 
-      mapping = {
+      cmdline = {
         "<Down>" = {
           modes = [ "i" "s" ];
           action = ''
