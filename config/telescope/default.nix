@@ -28,13 +28,19 @@
       };
     };
     # Have Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
-    defaults.mappings = {
-      i = {
-        "<esc>" = {
-          __raw = ''
-            function(...)
-              return require("telescope.actions").close(...)
-            end'';
+    defaults = {
+      prompt_prefix = "   ";
+      color_devicons = true;
+      set_env.COLORTERM = "truecolor";
+
+      mappings = {
+        i = {
+          "<esc>" = {
+            __raw = ''
+              function(...)
+                return require("telescope.actions").close(...)
+              end'';
+          };
         };
       };
     };
