@@ -2,62 +2,9 @@
   plugins = {
     lsp = {
       enable = true;
-      servers = {
-        bashls.enable = true;
-        cssls.enable = true;
-        html.enable = true;
-        jsonls.enable = true;
-        lua-ls = {
-          enable = true;
-          extraOptions.settings.Lua = {
-            completion.callSnippet = "Replace";
-            telemetry.enabled = false;
-            hint.enable = true;
-          };
-        };
-        nil_ls.enable = true;
-        tsserver = {
-          enable = false;
-          filetypes = [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
-          extraOptions = {
-            settings = {
-              javascript = {
-                inlayHints = {
-                  includeInlayEnumMemberValueHints = true;
-                  includeInlayFunctionLikeReturnTypeHints = true;
-                  includeInlayFunctionParameterTypeHints = true;
-                  includeInlayParameterNameHints = "all";
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = true;
-                  includeInlayPropertyDeclarationTypeHints = true;
-                  includeInlayVariableTypeHints = true;
-                };
-              };
-              typescript = {
-                inlayHints = {
-                  includeInlayEnumMemberValueHints = true;
-                  includeInlayFunctionLikeReturnTypeHints = true;
-                  includeInlayFunctionParameterTypeHints = true;
-                  includeInlayParameterNameHints = "all";
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = true;
-                  includeInlayPropertyDeclarationTypeHints = true;
-                  includeInlayVariableTypeHints = true;
-                };
-              };
-            };
-          };
-        };
-        eslint.enable = true;
-        pyright.enable = true;
-        ruff-lsp.enable = true;
-        tailwindcss.enable = true;
-        rust-analyzer = {
-          enable = true;
-          installCargo = true;
-          installRustc = true;
-          settings.procMacro.enable = true;
-        };
-      };
     };
+
+    lint.enable = true;
   };
 
   extraConfigLua = ''
@@ -65,15 +12,13 @@
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
       vim.lsp.handlers.hover, {
-        border = _border
-      }
-    )
+        border = _border,
+      })
 
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
       vim.lsp.handlers.signature_help, {
-        border = _border
-      }
-    )
+        border = _border,
+      })
 
     vim.diagnostic.config{
       float={border=_border}
@@ -82,6 +27,12 @@
     require('lspconfig.ui.windows').default_options = {
       border = _border
     }
+
+    vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+      callback = function()
+        require("lint").try_lint()
+      end,
+    })
   '';
   keymaps = [{
     mode = "n";

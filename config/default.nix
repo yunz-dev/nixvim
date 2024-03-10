@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
 
   enableMan = false;
@@ -7,7 +8,6 @@
     ./bufferline
 
     ./completion/cmp.nix
-    ./completion/lspkind.nix
 
     ./neotree
     ./theme
@@ -20,11 +20,20 @@
     ./lsp/conform.nix
     ./lsp/fidget.nix
     ./lsp/lsp.nix
-    ./lsp/nvim-lint.nix
     ./lsp/lspsaga.nix
     ./lsp/trouble.nix
-    ./lsp/none-ls.nix
-    ./lsp/typescript-tools-nvim.nix
+
+    ./lang/css.nix
+    ./lang/docker.nix
+    ./lang/html.nix
+    ./lang/json.nix
+    ./lang/lua.nix
+    ./lang/markdown.nix
+    ./lang/nix.nix
+    ./lang/python.nix
+    ./lang/shell.nix
+    ./lang/typescript.nix
+    ./lang/yaml.nix
 
     ./treesitter/treesitter.nix
     ./treesitter/treesitter-textobjects.nix
@@ -54,4 +63,16 @@
     ./keymaps.nix
     ./settings.nix
   ];
+
+  extraPackages = with pkgs; [
+    ripgrep
+    lazygit
+    fzf
+  ];
+
+  # feature that enhances the way Neovim loads and executes Lua modules, 
+  # offering improved performance and flexibility.
+  luaLoader.enable = true;
+
+  clipboard.providers.wl-copy.enable = true;
 }
