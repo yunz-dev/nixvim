@@ -5,8 +5,6 @@
 
   # Import all your configuration modules here
   imports = [
-    ./bufferline
-
     ./completion/cmp.nix
 
     ./neotree
@@ -39,6 +37,7 @@
     ./treesitter/treesitter-textobjects.nix
 
     ./ui/alpha.nix
+    ./ui/bufferline.nix
     ./ui/dressing-nvim.nix
     ./ui/flash.nix
     ./ui/indent-blankline.nix
