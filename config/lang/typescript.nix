@@ -21,10 +21,8 @@
         typescript = [ "eslint_d" ];
         javascript = [ "eslint_d" ];
       };
-      linters = {
-        eslint_d = {
-          cmd = "${pkgs.eslint_d}/bin/eslint_d";
-        };
+      linters.eslint_d = {
+        cmd = "${pkgs.eslint_d}/bin/eslint_d";
       };
     };
 
