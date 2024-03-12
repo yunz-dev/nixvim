@@ -7,14 +7,12 @@
   plugins = {
     conform-nvim = {
       formattersByFt = {
-        typescript = [ "prettierd" ];
-        javascript = [ "prettierd" ];
+        typescript = [ "eslint_d" ];
+        javascript = [ "eslint_d" ];
       };
 
-      formatters = {
-        prettierd = {
-          command = "${pkgs.prettierd}/bin/prettierd";
-        };
+      formatters.eslint_d = {
+        command = "${pkgs.eslint_d}/bin/eslint_d";
       };
     };
 
