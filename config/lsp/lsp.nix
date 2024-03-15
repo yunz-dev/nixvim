@@ -21,7 +21,13 @@
       })
 
     vim.diagnostic.config{
-      float={border=_border}
+      float = { border = _border },
+      virtual_text = {
+        prefix = "",
+      },
+      signs = true,
+      underline = true,
+      update_in_insert = true,
     };
 
     require('lspconfig.ui.windows').default_options = {

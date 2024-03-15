@@ -5,13 +5,13 @@
   ];
 
   plugins = {
-    image = {
-      enable = true;
-      integrations.markdown = {
-        clearInInsertMode = true;
-        onlyRenderImageAtCursor = true;
-      };
-    };
+    # image = {
+    #   enable = true;
+    #   integrations.markdown = {
+    #     clearInInsertMode = true;
+    #     onlyRenderImageAtCursor = true;
+    #   };
+    # };
 
     lsp.servers = {
       marksman.enable = true;
