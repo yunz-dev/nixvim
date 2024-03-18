@@ -1,6 +1,32 @@
-# Nixvim template
+<h1 align="center">
+      <img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" width="96px" height="96px" />
+      <br>
+  
+  Akari <br>
+  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
+  <div align="center">
 
-This template gives you a good starting point for configuring nixvim standalone.
+  <div align="center">
+   <p></p>
+   <a href="">
+      <img src="https://img.shields.io/github/issues/spector700/Akari?color=fab387&labelColor=303446&style=for-the-badge">
+   </a>
+   <a href="https://github.com/sioodmy/dotfiles/">
+      <img src="https://img.shields.io/github/repo-size/spector700/Akari?color=ea999c&labelColor=303446&style=for-the-badge">
+   </a>
+      <a = href="https://nixos.org">
+      <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
+    </a>
+   <br>
+</div>
+</h1>
+
+<br>
+</div>
+
+# Akari
+
+Standalone nixvim flake based on Lazyvim with some more changes.
 
 ## Installation
 
