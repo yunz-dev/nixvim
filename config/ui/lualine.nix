@@ -35,14 +35,10 @@
       local ui = {}
 
       function ui.fg(name)
-        ---@type {foreground?:number}?
-        ---@diagnostic disable-next-line: deprecated
         local hl = vim.api.nvim_get_hl and vim.api.nvim_get_hl(0, { name = name }) or vim.api.nvim_get_hl_by_name(name, true)
-        ---@diagnostic disable-next-line: undefined-field
         local fg = hl and (hl.fg or hl.foreground)
         return fg and { fg = string.format("#%06x", fg) } or nil
       end
-
 
       ---@param opts? {relative: "cwd"|"root", modified_hl: string?}
       function ui.pretty_path(opts)
@@ -81,7 +77,6 @@
           return table.concat(parts, sep)
         end
       end
-      
 
       require("lualine").setup({
           sections = {
