@@ -14,22 +14,22 @@
         };
         undo = {
           enable = true;
-          mappings = {
+          settings.mappings = {
             i = {
-              "<cr>" = "yank_additions";
-              "<s-cr>" = "yank_deletions";
-              "<c-cr>" = "restore";
+              "<cr>" = "require('telescope-undo.actions').yank_additions";
+              "<s-cr>" = "require('telescope-undo.actions').yank_deletions";
+              "<c-cr>" = "require('telescope-undo.actions').restore";
             };
             n = {
-              "y" = "yank_additions";
-              "Y" = "yank_deletions";
-              "u" = "restore";
+              "y" = "require('telescope-undo.actions').yank_additions";
+              "Y" = "require('telescope-undo.actions').yank_deletions";
+              "u" = "require('telescope-undo.actions').restore";
             };
           };
         };
       };
       # Have Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
-      defaults = {
+      settings.defaults = {
         prompt_prefix = "   ";
         color_devicons = true;
         set_env.COLORTERM = "truecolor";
@@ -48,95 +48,71 @@
       keymaps = {
         "<leader><space>" = {
           action = "find_files, {}";
-          desc = "Find project files";
+          options.desc = "Find project files";
         };
         "<leader>ff" = {
           action = "find_files, {}";
-          desc = "Find project files";
+          options.desc = "Find project files";
         };
         "<leader>/" = {
           action = "live_grep";
-          desc = "Grep (root dir)";
+          options.desc = "Grep (root dir)";
         };
         "<leader>:" = {
           action = "command_history, {}";
-          desc = "Command History";
+          options.desc = "Command History";
         };
         "<leader>fr" = {
           action = "oldfiles, {}";
-          desc = "Recent";
-        };
-        "<leader>fb" = {
-          action = "buffers, {}";
-          desc = "Buffers";
+          options.desc = "Recent";
         };
         "<leader>b" = {
           action = "buffers, {}";
-          desc = "+buffer";
-        };
-        "<C-p>" = {
-          action = "git_files, {}";
-          desc = "Search git files";
+          options.desc = "+buffer";
         };
         "<leader>gc" = {
           action = "git_commits, {}";
-          desc = "commits";
-        };
-        "<leader>gs" = {
-          action = "git_status, {}";
-          desc = "status";
+          options.desc = "commits";
         };
         "<leader>sa" = {
           action = "autocommands, {}";
-          desc = "Auto Commands";
-        };
-        "<leader>sb" = {
-          action = "current_buffer_fuzzy_find, {}";
-          desc = "Buffer";
-        };
-        "<leader>sc" = {
-          action = "command_history, {}";
-          desc = "Command History";
+          options.desc = "Auto Commands";
         };
         "<leader>sC" = {
           action = "commands, {}";
-          desc = "Commands";
+          options.desc = "Commands";
         };
         "<leader>sD" = {
           action = "diagnostics, {}";
-          desc = "Workspace diagnostics";
+          options.desc = "Workspace diagnostics";
         };
         "<leader>sh" = {
           action = "help_tags, {}";
-          desc = "Help pages";
+          options.desc = "Help pages";
         };
         "<leader>sH" = {
           action = "highlights, {}";
-          desc = "Search Highlight Groups";
+          options.desc = "Search Highlight Groups";
         };
         "<leader>sk" = {
           action = "keymaps, {}";
-          desc = "Key maps";
+          options.desc = "Key maps";
         };
         "<leader>sM" = {
           action = "man_pages, {}";
-          desc = "Man pages";
+          options.desc = "Man pages";
         };
         "<leader>sm" = {
           action = "marks, {}";
-          desc = "Jump to Mark";
+          options.desc = "Jump to Mark";
         };
         "<leader>so" = {
           action = "vim_options, {}";
-          desc = "Options";
-        };
-        "<leader>sR" = {
-          action = "resume, {}";
-          desc = "Resume";
+          options.desc = "Options";
         };
         "<leader>uC" = {
           action = "colorscheme, {}";
-          desc = "Colorscheme preview";
+          options.desc = "Colorscheme preview";
         };
       };
     };
@@ -169,13 +145,4 @@
       };
     }
   ];
-  extraConfigLua = ''
-      require("telescope").setup{
-          pickers = {
-            colorscheme = {
-              enable_preview = true
-            }
-          }
-    }
-  '';
 }
