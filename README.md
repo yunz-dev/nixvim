@@ -1,7 +1,7 @@
 <h1 align="center">
       <img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" width="96px" height="96px" />
       <br>
-  
+
   Akari <br>
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
   <div align="center">
@@ -23,6 +23,13 @@
 
 <br>
 </div>
+
+![neovim-pic-1](./.github/assets/neovim-pic-1.png)
+![neovim-pic-2](./.github/assets/neovim-pic-2.png)
+![neovim-pic-3](./.github/assets/neovim-pic-3.png)
+<p align="center"> Screenshots Circa: 2024-4-9</p>
+
+---
 
 # Akari
 
