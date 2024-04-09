@@ -5,13 +5,9 @@
   ];
 
   plugins = {
-    # image = {
-    #   enable = true;
-    #   integrations.markdown = {
-    #     clearInInsertMode = true;
-    #     onlyRenderImageAtCursor = true;
-    #   };
-    # };
+    markdown-preview = {
+      enable = true;
+    };
 
     lsp.servers = {
       marksman.enable = true;
@@ -34,4 +30,16 @@
       };
     };
   };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>m";
+      action = "<cmd>MarkdownPreviewToggle<cr>";
+      options = {
+        silent = true;
+        desc = "Toggle markdown preview";
+      };
+    }
+  ];
 }
