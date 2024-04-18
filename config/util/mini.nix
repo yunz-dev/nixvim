@@ -20,6 +20,7 @@
         };
       };
     };
+
     ts-context-commentstring.enable = true;
   };
 }

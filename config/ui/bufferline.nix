@@ -82,6 +82,7 @@
           bg = "#252434";
         };
       };
+
       offsets = [
         {
           filetype = "neo-tree";
@@ -92,6 +93,7 @@
       ];
     };
   };
+
   keymaps = [
     {
       mode = "n";

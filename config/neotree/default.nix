@@ -2,11 +2,14 @@
   plugins.neo-tree = {
     enable = true;
     closeIfLastWindow = true;
-    popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
-    buffers = {
+    popupBorderStyle = "rounded"; # “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+
+    filesystem = {
       bindToCwd = false;
+      useLibuvFileWatcher = true;
       followCurrentFile.enabled = true;
     };
+
     window.mappings = {
       "<space>" = "none";
     };

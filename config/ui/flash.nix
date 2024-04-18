@@ -3,6 +3,7 @@
     enable = true;
     label.uppercase = false;
   };
+
   keymaps = [
     {
       mode = [ "n" "x" "o" ];
