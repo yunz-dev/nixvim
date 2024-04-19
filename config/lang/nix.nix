@@ -7,11 +7,11 @@
 
     conform-nvim = {
       formattersByFt = {
-        nix = [ "nixpkgs_fmt" ];
+        nix = [ "nixfmt-rfc-style" ];
       };
       formatters = {
-        nixpkgs_fmt = {
-          command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
+        nixfmt-rfc-style = {
+          command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
         };
       };
     };
