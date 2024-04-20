@@ -9,6 +9,7 @@
       formattersByFt = {
         nix = [ "nixfmt-rfc-style" ];
       };
+
       formatters = {
         nixfmt-rfc-style = {
           command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
@@ -20,6 +21,7 @@
       lintersByFt = {
         nix = [ "statix" ];
       };
+
       linters = {
         statix = {
           cmd = "${pkgs.statix}/bin/statix";
@@ -27,9 +29,7 @@
       };
     };
 
-    lsp.servers.nil_ls = {
-      enable = true;
-    };
+    lsp.servers.nil_ls.enable = true;
   };
 
   extraConfigVim = ''

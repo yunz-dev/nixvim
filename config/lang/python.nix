@@ -7,6 +7,7 @@
       formattersByFt = {
         python = [ "black" ];
       };
+
       formatters = {
         black = {
           command = "${pkgs.black}/bin/black";
@@ -26,6 +27,6 @@
       };
     };
 
-    lsp.servers.ruff-lsp.enable = true;
+    lsp.servers.ruff.enable = true;
   };
 }

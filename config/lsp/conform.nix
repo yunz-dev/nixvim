@@ -3,7 +3,7 @@
   plugins.conform-nvim = {
     enable = true;
     formatOnSave = {
-      lspFallback = true;
+      lspFallback = false;
       timeoutMs = 500;
     };
     formattersByFt = {
@@ -19,7 +19,10 @@
 
   keymaps = [
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>cf";
       action = "<cmd>lua require('conform').format()<cr>";
       options = {

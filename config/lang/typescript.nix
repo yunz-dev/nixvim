@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
-  extraPackages = with pkgs; [
-    typescript
-  ];
+  extraPackages = with pkgs; [ typescript ];
 
   plugins = {
     conform-nvim = {

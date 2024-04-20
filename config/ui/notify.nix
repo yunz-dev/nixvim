@@ -5,6 +5,7 @@
     stages = "static";
     timeout = 4000;
   };
+
   keymaps = [
     {
       mode = "n";
@@ -17,6 +18,7 @@
       };
     }
   ];
+
   extraConfigLua = ''
     local notify = require("notify")
 
