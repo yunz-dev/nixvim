@@ -21,6 +21,7 @@
     ./lsp/lspsaga.nix
     ./lsp/trouble.nix
 
+    ./lang/cpp.nix
     ./lang/css.nix
     ./lang/docker.nix
     ./lang/html.nix
