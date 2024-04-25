@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   plugins = {
+    clangd-extensions.enable = true;
+
     conform-nvim = {
       formattersByFt = {
         cpp = [ "clang-format" ];
@@ -13,6 +15,11 @@
       };
     };
 
-    lsp.servers.clangd.enable = true;
+    lsp.servers.clangd = {
+      enable = true;
+      onAttach.function = ''
+        vim.keymap.set('n', 'gh', "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "Switch Source/Header (C/C++)", buffer = bufnr })
+      '';
+    };
   };
 }
