@@ -29,7 +29,7 @@
 
     lsp.servers = {
       pyright.enable = true;
-      ruff = {
+      ruff-lsp = {
         enable = true;
         onAttach.function = ''
           if client.name == 'ruff' then
