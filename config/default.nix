@@ -7,6 +7,8 @@
   imports = [
     ./completion/cmp.nix
 
+    ./debug/dap.nix
+
     ./neotree
     ./theme
     ./luasnip
