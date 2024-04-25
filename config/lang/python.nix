@@ -27,6 +27,17 @@
       };
     };
 
-    lsp.servers.ruff-lsp.enable = true;
+    lsp.servers = {
+      pyright.enable = true;
+      ruff = {
+        enable = true;
+        onAttach.function = ''
+          if client.name == 'ruff' then
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
+          end
+        '';
+      };
+    };
   };
 }
