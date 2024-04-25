@@ -27,6 +27,6 @@
       };
     };
 
-    lsp.servers.ruff.enable = true;
+    lsp.servers.ruff-lsp.enable = true;
   };
 }
