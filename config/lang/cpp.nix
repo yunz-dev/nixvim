@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, helpers, ... }:
 {
   plugins = {
     clangd-extensions.enable = true;
@@ -23,6 +23,30 @@
           vim.keymap.set('n', 'gh', "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "Switch Source/Header (C/C++)", buffer = bufnr })
         '';
       };
+    };
+
+    dap = {
+      adapters.executables.lldb.command = "${pkgs.lldb}/bin/lldb-vscode";
+
+      configurations.cpp = [
+        {
+          name = "C++";
+          type = "lldb";
+          request = "launch";
+          cwd = "\${workspaceFolder}";
+          program = helpers.mkRaw ''
+            function()
+              return vim.fn.input('Executable path: ', vim.fn.getcwd() .. '/', 'file')
+            end
+          '';
+          # args = helpers.mkRaw ''
+          #   function()
+          #     local arguments_string = vim.fn.input('Executable arguments: ')
+          #     return vim.split(arguments_string, " +")
+          #   end
+          # '';
+        }
+      ];
     };
   };
 }
