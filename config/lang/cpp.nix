@@ -1,8 +1,6 @@
 { pkgs, helpers, ... }:
 {
   plugins = {
-    clangd-extensions.enable = true;
-
     conform-nvim = {
       formattersByFt = {
         cpp = [ "clang-format" ];
@@ -19,9 +17,56 @@
       cmake.enable = true;
       clangd = {
         enable = true;
+        cmd = [
+          "clangd"
+          "--header-insertion=iwyu"
+          "--background-index"
+          "--clang-tidy"
+          "--all-scopes-completion"
+          "--completion-style=detailed"
+          "--function-arg-placeholders"
+          "--fallback-style=llvm"
+          "-j=6"
+        ];
         onAttach.function = ''
           vim.keymap.set('n', 'gh', "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "Switch Source/Header (C/C++)", buffer = bufnr })
+
+          require("clangd_extensions.inlay_hints").setup_autocmd()
+          require("clangd_extensions.inlay_hints").set_inlay_hints()
         '';
+        extraOptions = {
+          init_options = {
+            usePlaceholders = true;
+            completeUnimported = true;
+            clangdFileStatus = true;
+          };
+        };
+      };
+    };
+
+    clangd-extensions = {
+      enable = true;
+      extraOptions = {
+        codelens.enable = true;
+      };
+      ast = {
+        roleIcons = {
+          type = "";
+          declaration = "";
+          expression = "";
+          specifier = "";
+          statement = "";
+          templateArgument = "";
+        };
+        kindIcons = {
+          compound = "";
+          recovery = "";
+          translationUnit = "";
+          packExpansion = "";
+          templateTypeParm = "";
+          templateTemplateParm = "";
+          templateParamObject = "";
+        };
       };
     };
 
@@ -39,12 +84,6 @@
               return vim.fn.input('Executable path: ', vim.fn.getcwd() .. '/', 'file')
             end
           '';
-          # args = helpers.mkRaw ''
-          #   function()
-          #     local arguments_string = vim.fn.input('Executable arguments: ')
-          #     return vim.split(arguments_string, " +")
-          #   end
-          # '';
         }
       ];
     };
