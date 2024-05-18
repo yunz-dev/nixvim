@@ -47,6 +47,9 @@
     clangd-extensions = {
       enable = true;
       extraOptions = {
+        inlay_hints = {
+          inline = false;
+        };
         codelens.enable = true;
       };
       ast = {
