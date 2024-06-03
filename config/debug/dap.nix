@@ -75,237 +75,121 @@
 
   keymaps = [
     {
-      action = "+debug";
       mode = [ "n" ];
+      action = "+debug";
       key = "<leader>d";
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').continue()
-          end
-        '';
+      mode = [ "n" ];
+      action = ":DapContinue<cr>";
       key = "<leader>dc";
-      lua = true;
       options = {
         desc = "Continue";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').step_over()
-          end
-        '';
+      mode = [ "n" ];
+      action = ":DapStepOver<cr>";
       key = "<leader>dO";
-      lua = true;
       options = {
         desc = "Step over";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').step_into()
-          end
-        '';
+      mode = [ "n" ];
+      action = ":DapStepInto<cr>";
       key = "<leader>di";
-      lua = true;
       options = {
         desc = "Step Into";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').step_out()
-          end
-        '';
+      mode = [ "n" ];
+      action = ":DapStepOut<cr>";
       key = "<leader>do";
-      lua = true;
       options = {
         desc = "Step Out";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').pause()
-          end
-        '';
+      mode = [ "n" ];
+      action = "<cmd>lua require('dap').pause()<cr>";
       key = "<leader>dp";
-      lua = true;
       options = {
         desc = "Pause";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').toggle_breakpoint()
-          end
-        '';
+      mode = [ "n" ];
+      action = ":DapToggleBreakpoint<cr>";
       key = "<leader>db";
-      lua = true;
       options = {
         desc = "Toggle Breakpoint";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-          	require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
-          end
-        '';
+      mode = [ "n" ];
+      action = "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>";
       key = "<leader>dB";
-      lua = true;
       options = {
         desc = "Breakpoint (conditional)";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').repl.toggle()
-          end
-        '';
+      mode = [ "n" ];
+      action = ":DapToggleRepl<cr>";
       key = "<leader>dR";
-      lua = true;
       options = {
         desc = "Toggle REPL";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-          	local dap = require('dap')
-          	dap.disconnect()
-          	dap.close()
-          	dap.run_last()
-          end
-        '';
-      key = "<leader>dr";
-      lua = true;
-      options = {
-        desc = "Restart Debugger";
-      };
       mode = [ "n" ];
-    }
-    {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').run_last()
-          end
-        '';
+      action = "<cmd>lua require('dap').run_last()<cr>";
       key = "<leader>dr";
-      lua = true;
       options = {
         desc = "Run Last";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').session()
-          end
-        '';
+      mode = [ "n" ];
+      action = "<cmd>lua require('dap').session()<cr>";
       key = "<leader>ds";
-      lua = true;
       options = {
         desc = "Session";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap').terminate()
-          end
-        '';
+      mode = [ "n" ];
+      action = ":DapTerminate<cr>";
       key = "<leader>dt";
-      lua = true;
       options = {
         desc = "Terminate";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dap.ui.widgets').hover()
-          end
-        '';
+      mode = [ "n" ];
+      action = "<cmd>lua require('dap.ui.widgets').hover()<cr>";
       key = "<leader>dw";
-      lua = true;
       options = {
         desc = "Hover Widget";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dapui').toggle()
-          end
-        '';
+      mode = [ "n" ];
+      action = "<cmd>lua require('dapui').toggle()<cr>";
       key = "<leader>du";
-      lua = true;
       options = {
         desc = "Toggle UI";
       };
-      mode = [ "n" ];
     }
     {
-      action =
-        # lua
-        ''
-          function()
-            require('dapui').eval()
-          end
-        '';
+      mode = [ "n" ];
+      action = "<cmd>lua require('dapui').eval()<cr>";
       key = "<leader>de";
-      lua = true;
       options = {
         desc = "Eval";
       };
-      mode = [ "n" ];
     }
   ];
 }
