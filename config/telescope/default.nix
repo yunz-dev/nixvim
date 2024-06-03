@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   plugins = {
     project-nvim.enableTelescope = true;
@@ -28,7 +29,7 @@
           };
         };
       };
-      # Have Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
+
       settings.defaults = {
         prompt_prefix = "   ";
         color_devicons = true;
@@ -36,22 +37,50 @@
 
         mappings = {
           i = {
+            # Have Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
             "<esc>" = {
               __raw = ''
                 function(...)
                   return require("telescope.actions").close(...)
                 end'';
             };
+            "<c-t>" = {
+              __raw = ''
+                function(...)
+                  require('trouble.providers.telescope').open_with_trouble(...);
+                end
+              '';
+            };
+          };
+          n = {
+            "<c-t>" = {
+              __raw = ''
+                function(...)
+                  require('trouble.providers.telescope').open_with_trouble(...);
+                end
+              '';
+            };
           };
         };
+        # trim leading whitespace from grep
+        vimgrep_arguments = [
+          "${pkgs.ripgrep}/bin/rg"
+          "--color=never"
+          "--no-heading"
+          "--with-filename"
+          "--line-number"
+          "--column"
+          "--smart-case"
+          "--trim"
+        ];
       };
       keymaps = {
         "<leader><space>" = {
-          action = "find_files, {}";
+          action = "find_files";
           options.desc = "Find project files";
         };
         "<leader>ff" = {
-          action = "find_files, {}";
+          action = "find_files";
           options.desc = "Find project files";
         };
         "<leader>/" = {
@@ -59,60 +88,72 @@
           options.desc = "Grep (root dir)";
         };
         "<leader>:" = {
-          action = "command_history, {}";
+          action = "command_history";
           options.desc = "Command History";
         };
         "<leader>fr" = {
-          action = "oldfiles, {}";
+          action = "oldfiles";
           options.desc = "Recent";
         };
-        "<leader>b" = {
-          action = "buffers, {}";
-          options.desc = "+buffer";
-        };
         "<leader>gc" = {
-          action = "git_commits, {}";
+          action = "git_commits";
           options.desc = "commits";
         };
         "<leader>sa" = {
-          action = "autocommands, {}";
+          action = "autocommands";
           options.desc = "Auto Commands";
         };
         "<leader>sC" = {
-          action = "commands, {}";
+          action = "commands";
           options.desc = "Commands";
         };
         "<leader>sD" = {
-          action = "diagnostics, {}";
+          action = "diagnostics";
           options.desc = "Workspace diagnostics";
         };
         "<leader>sh" = {
-          action = "help_tags, {}";
+          action = "help_tags";
           options.desc = "Help pages";
         };
         "<leader>sH" = {
-          action = "highlights, {}";
+          action = "highlights";
           options.desc = "Search Highlight Groups";
         };
         "<leader>sk" = {
-          action = "keymaps, {}";
+          action = "keymaps";
           options.desc = "Key maps";
         };
         "<leader>sM" = {
-          action = "man_pages, {}";
+          action = "man_pages";
           options.desc = "Man pages";
         };
         "<leader>sm" = {
-          action = "marks, {}";
+          action = "marks";
           options.desc = "Jump to Mark";
         };
         "<leader>so" = {
-          action = "vim_options, {}";
+          action = "vim_options";
           options.desc = "Options";
         };
         "<leader>uC" = {
-          action = "colorscheme, {}";
+          action = "colorscheme";
           options.desc = "Colorscheme preview";
+        };
+        "gd" = {
+          action = "lsp_definitions";
+          options.desc = "Lsp definitions";
+        };
+        "gy" = {
+          action = "lsp_type_definitions";
+          options.desc = "Lsp type definitions";
+        };
+        "gr" = {
+          action = "lsp_references";
+          options.desc = "Lsp references";
+        };
+        "gi" = {
+          action = "lsp_implementations";
+          options.desc = "Lsp implementations";
         };
       };
     };
