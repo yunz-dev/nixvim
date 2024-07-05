@@ -29,7 +29,7 @@
       };
     };
 
-    lsp.servers.nil_ls.enable = true;
+    lsp.servers.nil-ls.enable = true;
   };
 
   extraConfigVim = ''
