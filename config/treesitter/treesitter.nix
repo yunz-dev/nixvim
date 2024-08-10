@@ -2,10 +2,13 @@
   plugins = {
     treesitter = {
       enable = true;
-      indent = true;
+      settings = {
+        highlight.enable = true;
+        incremental_selection.enable = true;
+        indent.enable = true;
+      };
       nixvimInjections = true;
     };
     treesitter-context.enable = true;
-    ts-autotag.enable = true;
   };
 }

@@ -100,6 +100,8 @@
         ];
       };
     };
+
+    ts-autotag.enable = true;
   };
 
   # lint = {

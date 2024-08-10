@@ -1,10 +1,8 @@
-{ pkgs
-, config
-, ...
-}: {
+{ pkgs, ... }:
+{
   plugins.luasnip = {
     enable = true;
-    extraConfig = {
+    settings = {
       enable_autosnippets = true;
       store_selection_keys = "<Tab>";
     };
