@@ -72,16 +72,6 @@
           };
         };
       };
-
-      eslint = {
-        enable = true;
-        filetypes = [
-          "javascript"
-          "javascriptreact"
-          "typescript"
-          "typescriptreact"
-        ];
-      };
     };
 
     lint = {
