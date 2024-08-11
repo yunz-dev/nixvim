@@ -24,30 +24,13 @@
 
     conform-nvim = {
       formattersByFt = {
-        #   typescript = [ "eslint_d" ];
-        #   javascript = [ "eslint_d" ];
-        # };
-        javascript = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
-        typescript = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
+        typescript = [ "eslint_d" ];
+        javascript = [ "eslint_d" ];
       };
 
-      formatters = {
-        prettierd.command = "${pkgs.prettierd}/bin/prettierd";
+      formatters.eslint_d = {
+        command = "${pkgs.eslint_d}/bin/eslint_d";
       };
-
-      # formatters.eslint_d = {
-      #   command = "${pkgs.eslint_d}/bin/eslint_d";
-      # };
     };
 
     lsp.servers = {
