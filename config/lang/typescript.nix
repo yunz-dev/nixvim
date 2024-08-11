@@ -41,6 +41,10 @@
         ];
       };
 
+      formatters = {
+        prettierd.command = "${pkgs.prettierd}/bin/prettierd";
+      };
+
       # formatters.eslint_d = {
       #   command = "${pkgs.eslint_d}/bin/eslint_d";
       # };
@@ -92,6 +96,7 @@
           (lib.getExe pkgs.eslint_d)
           "--stdio"
         ];
+
         filetypes = [
           "javascript"
           "javascriptreact"
@@ -101,18 +106,19 @@
       };
     };
 
+    lint = {
+      lintersByFt = {
+        typescript = [ "eslint_d" ];
+        javascript = [ "eslint_d" ];
+      };
+
+      linters.eslint_d = {
+        cmd = "${pkgs.eslint_d}/bin/eslint_d";
+      };
+    };
+
     ts-autotag.enable = true;
   };
-
-  # lint = {
-  #   lintersByFt = {
-  #     typescript = [ "eslint_d" ];
-  #     javascript = [ "eslint_d" ];
-  #   };
-  #   linters.eslint_d = {
-  #     cmd = "${pkgs.eslint_d}/bin/eslint_d";
-  #   };
-  # };
 
   # typescript-tools = {
   #   enable = true;
