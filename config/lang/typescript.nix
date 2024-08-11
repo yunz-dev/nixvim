@@ -75,11 +75,6 @@
 
       eslint = {
         enable = true;
-        cmd = [
-          (lib.getExe pkgs.eslint_d)
-          "--stdio"
-        ];
-
         filetypes = [
           "javascript"
           "javascriptreact"
