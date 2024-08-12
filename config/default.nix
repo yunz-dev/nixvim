@@ -51,6 +51,7 @@
     ./ui/toggleterm.nix
     ./ui/whichkey.nix
 
+    ./util/lazy.nix
     ./util/nvim-colorizer.nix
     ./util/mini.nix
     ./util/nvim-autopairs.nix
