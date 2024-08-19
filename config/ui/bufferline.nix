@@ -9,11 +9,11 @@
             fg = "#605f6f";
           };
 
-          bufferSelected = {
+          buffer_selected = {
             bg = "#1E1D2D";
             fg = "#D9E0EE";
           };
-          bufferVisible = {
+          buffer_visible = {
             fg = "#605f6f";
             bg = "#252434";
           };
@@ -22,16 +22,16 @@
             fg = "#605f6f";
             bg = "#252434";
           };
-          errorDiagnostic = {
+          error_diagnostic = {
             fg = "#605f6f";
             bg = "#252434";
           };
 
-          closeButton = {
+          close_button = {
             fg = "#605f6f";
             bg = "#252434";
           };
-          closeButtonVisible = {
+          close_button_visible = {
             fg = "#605f6f";
             bg = "#252434";
           };
@@ -39,7 +39,7 @@
             bg = "#1E1D2D";
             fg = "#605f6f";
           };
-          indicatorSelected = {
+          indicator_selected = {
             bg = "#1E1D2D";
             fg = "#1E1D2D";
           };
@@ -48,11 +48,11 @@
             fg = "#F38BA8";
             bg = "#252434";
           };
-          modifiedVisible = {
+          modified_visible = {
             fg = "#F38BA8";
             bg = "#252434";
           };
-          modifiedSelected = {
+          modified_selected = {
             fg = "#ABE9B3";
             bg = "#1E1D2D";
           };
@@ -61,11 +61,11 @@
             bg = "#252434";
             fg = "#252434";
           };
-          separatorVisible = {
+          separator_visible = {
             bg = "#252434";
             fg = "#252434";
           };
-          separatorSelected = {
+          separator_selected = {
             bg = "#252434";
             fg = "#252434";
           };
@@ -74,11 +74,11 @@
             fg = "NONE";
             bg = "#252434";
           };
-          duplicateSelected = {
+          duplicate_selected = {
             fg = "#F38BA8";
             bg = "#1E1D2D";
           };
-          duplicateVisible = {
+          duplicate_visible = {
             fg = "#89B4FA";
             bg = "#252434";
           };
