@@ -52,55 +52,6 @@
     };
   };
   keymaps = [
-    # {
-    #   mode = "n";
-    #   key = "gd";
-    #   action = "<cmd>Lspsaga finder def<CR>";
-    #   options = {
-    #     desc = "Goto Definition";
-    #     silent = true;
-    #   };
-    # }
-    # {
-    #   mode = "n";
-    #   key = "gr";
-    #   action = "<cmd>Lspsaga finder ref<CR>";
-    #   options = {
-    #     desc = "Goto References";
-    #     silent = true;
-    #   };
-    # }
-    #
-    # {
-    #   mode = "n";
-    #   key = "gD";
-    #   action = "<cmd>Lspsaga show_line_diagnostics<CR>";
-    #   options = {
-    #     desc = "Goto Declaration";
-    #     silent = true;
-    #   };
-    # }
-    #
-    # {
-    #   mode = "n";
-    #   key = "gI";
-    #   action = "<cmd>Lspsaga finder imp<CR>";
-    #   options = {
-    #     desc = "Goto Implementation";
-    #     silent = true;
-    #   };
-    # }
-    #
-    # {
-    #   mode = "n";
-    #   key = "gT";
-    #   action = "<cmd>Lspsaga peek_type_definition<CR>";
-    #   options = {
-    #     desc = "Type Definition";
-    #     silent = true;
-    #   };
-    # }
-
     {
       mode = "n";
       key = "K";
