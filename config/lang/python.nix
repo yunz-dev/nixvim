@@ -15,17 +15,17 @@
       };
     };
 
-    lint = {
-      lintersByFt = {
-        python = [ "ruff" ];
-      };
-
-      linters = {
-        ruff = {
-          cmd = "${pkgs.ruff}/bin/ruff";
-        };
-      };
-    };
+    # lint = {
+    #   lintersByFt = {
+    #     python = [ "ruff" ];
+    #   };
+    #
+    #   linters = {
+    #     ruff = {
+    #       cmd = "${pkgs.ruff}/bin/ruff";
+    #     };
+    #   };
+    # };
 
     lsp.servers = {
       pyright.enable = true;
