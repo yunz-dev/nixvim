@@ -1,13 +1,16 @@
 { pkgs, lib, ... }:
 {
   plugins = {
-    conform-nvim.formattersByFt = {
-      html = [
-        [
-          "prettierd"
-          "prettier"
-        ]
+    conform-nvim = {
+      formattersByFt.html = [
+        "prettierd"
+        "prettier"
       ];
+
+      formatters = {
+        prettierd.command = "${pkgs.prettierd}/bin/prettierd";
+        prettier.command = "${pkgs.nodePackages.prettier}/bin/prettier";
+      };
     };
 
     lsp = {
