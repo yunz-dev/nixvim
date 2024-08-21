@@ -16,14 +16,8 @@
     };
 
     lint = {
-      lintersByFt = {
-        lua = [ "luacheck" ];
-      };
-      linters = {
-        luacheck = {
-          cmd = "${pkgs.lua54Packages.luacheck}/bin/luacheck";
-        };
-      };
+      lintersByFt.lua = [ "luacheck" ];
+      linters.luacheck.cmd = "${pkgs.lua54Packages.luacheck}/bin/luacheck";
     };
   };
 }
