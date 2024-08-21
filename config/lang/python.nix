@@ -8,13 +8,14 @@
         "ruff_format"
         "ruff_organize_imports"
       ];
-
-      # formatters.black.command = "${pkgs.black}/bin/black";
     };
 
     lint = {
       lintersByFt.python = [ "mypy" ];
-      linters.mypy.cmd = "${pkgs.mypy}/bin/mypy";
+      linters.mypy = {
+        cmd = "${pkgs.mypy}/bin/mypy";
+        args = [ "--ignore-missing-imports" ];
+      };
     };
 
     lsp.servers = {

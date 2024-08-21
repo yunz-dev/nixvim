@@ -11,7 +11,9 @@
           };
         };
         # Highlight word under cursor
-        cursorword = { delay = 0; };
+        cursorword = {
+          delay = 0;
+        };
 
         # Show indent lines
         indentscope = {
