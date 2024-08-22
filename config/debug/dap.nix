@@ -1,84 +1,94 @@
 {
-  plugins.dap = {
-    enable = true;
-    signs = {
-      dapBreakpoint = {
-        text = " ";
-        texthl = "DiagnosticInfo";
+  plugins = {
+    dap = {
+      enable = true;
+      signs = {
+        dapBreakpoint = {
+          text = " ";
+          texthl = "DiagnosticInfo";
+        };
+        dapBreakpointCondition = {
+          text = " ";
+          texthl = "DiagnosticInfo";
+        };
+        dapBreakpointRejected = {
+          text = " ";
+          texthl = "DiagnosticError";
+        };
+        dapLogPoint = {
+          text = " ";
+          texthl = "DiagnosticInfo";
+        };
+        dapStopped = {
+          text = "󰁕 ";
+          texthl = "DiagnosticWarn";
+          linehl = "DapStoppedLine";
+          numhl = "DapStoppedLine";
+        };
       };
-      dapBreakpointCondition = {
-        text = " ";
-        texthl = "DiagnosticInfo";
-      };
-      dapBreakpointRejected = {
-        text = " ";
-        texthl = "DiagnosticError";
-      };
-      dapLogPoint = {
-        text = " ";
-        texthl = "DiagnosticInfo";
-      };
-      dapStopped = {
-        text = "󰁕 ";
-        texthl = "DiagnosticWarn";
-        linehl = "DapStoppedLine";
-        numhl = "DapStoppedLine";
+
+      extensions = {
+        dap-ui = {
+          enable = true;
+          layouts = [
+            {
+              elements = [
+                {
+                  id = "scopes";
+                  size = 0.25;
+                }
+                {
+                  id = "breakpoints";
+                  size = 0.25;
+                }
+                {
+                  id = "stacks";
+                  size = 0.25;
+                }
+                {
+                  id = "watches";
+                  size = 0.25;
+                }
+              ];
+              position = "left";
+              size = 40;
+            }
+            {
+              elements = [
+                {
+                  id = "repl";
+                  size = 0.5;
+                }
+                {
+                  id = "console";
+                  size = 0;
+                }
+              ];
+              position = "bottom";
+              size = 10;
+            }
+          ];
+        };
+
+        dap-virtual-text.enable = true;
       };
     };
 
-    extensions = {
-      dap-ui = {
-        enable = true;
-        layouts = [
-          {
-            elements = [
-              {
-                id = "scopes";
-                size = 0.25;
-              }
-              {
-                id = "breakpoints";
-                size = 0.25;
-              }
-              {
-                id = "stacks";
-                size = 0.25;
-              }
-              {
-                id = "watches";
-                size = 0.25;
-              }
-            ];
-            position = "left";
-            size = 40;
-          }
-          {
-            elements = [
-              {
-                id = "repl";
-                size = 0.5;
-              }
-              {
-                id = "console";
-                size = 0;
-              }
-            ];
-            position = "bottom";
-            size = 10;
-          }
-        ];
-      };
-
-      dap-virtual-text.enable = true;
+    which-key = {
+      settings.spec = [
+        {
+          __unkeyed-1 = "<leader>d";
+          mode = [
+            "n"
+            "v"
+          ];
+          group = "+debug";
+        }
+      ];
     };
   };
 
   keymaps = [
-    {
-      mode = [ "n" ];
-      action = "+debug";
-      key = "<leader>d";
-    }
     {
       mode = [ "n" ];
       action = ":DapContinue<cr>";
