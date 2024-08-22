@@ -1,4 +1,4 @@
-{ pkgs, helpers, ... }:
+{ pkgs, ... }:
 {
   plugins = {
     conform-nvim = {
@@ -82,7 +82,7 @@
           type = "lldb";
           request = "launch";
           cwd = "\${workspaceFolder}";
-          program = helpers.mkRaw ''
+          program.__raw = ''
             function()
               return vim.fn.input('Executable path: ', vim.fn.getcwd() .. '/', 'file')
             end
