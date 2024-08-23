@@ -2,14 +2,15 @@
   plugins.lspsaga = {
     enable = true;
     beacon.enable = true;
-    ui = {
-      border = "rounded"; # One of none, single, double, rounded, solid, shadow
-    };
+    ui.border = "rounded"; # One of none, single, double, rounded, solid, shadow
     hover = {
       openCmd = "!firfox";
       openLink = "gx";
     };
-    symbolInWinbar.enable = false; # Breadcrumbs
+    symbolInWinbar = {
+      enable = true; # Breadcrumbs
+      showFile = false;
+    };
 
     codeAction = {
       showServerName = true;
@@ -22,20 +23,21 @@
         ];
       };
     };
+
     lightbulb = {
-      enable = false;
-      sign = false;
+      enable = true;
+      sign = true;
     };
-    rename = {
-      keys = {
-        exec = "<CR>";
-        quit = [
-          "<C-k>"
-          "<Esc>"
-        ];
-        select = "x";
-      };
+
+    rename.keys = {
+      exec = "<CR>";
+      quit = [
+        "<C-k>"
+        "<Esc>"
+      ];
+      select = "x";
     };
+
     outline = {
       closeAfterJump = true;
       layout = "normal"; # normal or float
@@ -46,11 +48,13 @@
         toggleOrJump = "o";
       };
     };
+
     scrollPreview = {
-      scrollDown = "<C-f>";
       scrollUp = "<C-b>";
+      scrollDown = "<C-f>";
     };
   };
+
   keymaps = [
     {
       mode = "n";
@@ -61,7 +65,6 @@
         silent = true;
       };
     }
-
     {
       mode = "n";
       key = "<leader>cw";
@@ -81,7 +84,6 @@
         silent = true;
       };
     }
-
     {
       mode = "n";
       key = "<leader>ca";
@@ -91,7 +93,6 @@
         silent = true;
       };
     }
-
     {
       mode = "n";
       key = "<leader>cd";
@@ -101,7 +102,6 @@
         silent = true;
       };
     }
-
     {
       mode = "n";
       key = "[d";
@@ -111,7 +111,6 @@
         silent = true;
       };
     }
-
     {
       mode = "n";
       key = "]d";
