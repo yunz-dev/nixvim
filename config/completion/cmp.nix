@@ -62,6 +62,8 @@
               local luasnip = require("luasnip")
               if luasnip.locally_jumpable(1) then
                 luasnip.jump(1)
+              else
+                fallback()
               end
             end, { "i", "s" })
           '';
@@ -71,6 +73,8 @@
               local luasnip = require("luasnip")
               if luasnip.jumpable(-1) then
                 luasnip.jump(-1)
+              else
+                fallback()
               end
             end, { "i", "s" })
           '';
