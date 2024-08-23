@@ -19,7 +19,7 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = ":Neotree toggle reveal_force_cwd<cr>";
+      action = "<cmd>Neotree toggle reveal_force_cwd<cr>";
       options = {
         silent = true;
         desc = "Explorer NeoTree (root dir)";
