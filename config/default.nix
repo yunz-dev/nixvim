@@ -6,6 +6,7 @@
     ./autocmd.nix
     ./keymaps.nix
     ./settings.nix
+    ./lazy.nix
     ./plugins
   ];
 
@@ -15,10 +16,4 @@
     fzf
     fd
   ];
-
-  # feature that enhances the way Neovim loads and executes Lua modules, 
-  # offering improved performance and flexibility.
-  luaLoader.enable = true;
-
-  clipboard.providers.wl-copy.enable = true;
 }

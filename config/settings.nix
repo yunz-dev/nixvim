@@ -1,5 +1,18 @@
 {
   config = {
+    extraConfigLuaPre = ''
+      vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
+      vim.fn.sign_define("diagnosticsignwarn", { text = " ", texthl = "diagnosticwarn", linehl = "", numhl = "" })
+      vim.fn.sign_define("diagnosticsignhint", { text = "󰌵", texthl = "diagnostichint", linehl = "", numhl = "" })
+      vim.fn.sign_define("diagnosticsigninfo", { text = " ", texthl = "diagnosticinfo", linehl = "", numhl = "" })
+    '';
+
+    # feature that enhances the way Neovim loads and executes Lua modules, 
+    # offering improved performance and flexibility.
+    luaLoader.enable = true;
+
+    clipboard.providers.wl-copy.enable = true;
+
     opts = {
       virtualedit = "block"; # Allow cursor to move where there is no text in visual block mode
       cursorline = true; # Highlight the line where the cursor is located
@@ -64,6 +77,7 @@
       pumheight = 0;
 
     };
+
     extraConfigLua = ''
       local opt = vim.opt
       local g = vim.g
