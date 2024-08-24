@@ -5,8 +5,8 @@
 
     ./debug/dap.nix
 
-    ./editor/yazi.nix
     ./editor/neotree.nix
+    ./editor/undotree.nix
     ./editor/whichkey.nix
 
     ./theme
@@ -49,8 +49,8 @@
     ./ui/nui.nix
     ./ui/toggleterm.nix
 
-    ./util/lazy.nix
     ./util/nvim-colorizer.nix
+    ./util/kulala.nix
     ./util/mini.nix
     ./util/nvim-autopairs.nix
     ./util/nvim-surround.nix
