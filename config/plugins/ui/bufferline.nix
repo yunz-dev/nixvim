@@ -118,7 +118,7 @@
     {
       mode = "n";
       key = "<C-x>";
-      action = "<cmd>bdelete<cr>";
+      action = "<cmd>:bp | bd #<cr>";
       options = {
         desc = "Delete buffer";
       };
