@@ -6,25 +6,11 @@
       enable = true;
       extensions = {
         fzf-native.enable = true;
+        undo.enable = true;
         ui-select = {
           settings = {
             specific_opts = {
               codeactions = true;
-            };
-          };
-        };
-        undo = {
-          enable = true;
-          settings.mappings = {
-            i = {
-              "<cr>" = "require('telescope-undo.actions').yank_additions";
-              "<s-cr>" = "require('telescope-undo.actions').yank_deletions";
-              "<c-cr>" = "require('telescope-undo.actions').restore";
-            };
-            n = {
-              "y" = "require('telescope-undo.actions').yank_additions";
-              "Y" = "require('telescope-undo.actions').yank_deletions";
-              "u" = "require('telescope-undo.actions').restore";
             };
           };
         };
@@ -69,12 +55,28 @@
         ];
       };
       keymaps = {
+        "<leader>fp" = {
+          action = "projects";
+          options.desc = "Search Todo";
+        };
+        "<leader>st" = {
+          action = "todo-comments";
+          options.desc = "Search Todo";
+        };
+        "<leader>sn" = {
+          action = "notify";
+          options.desc = "Search Notifications";
+        };
+        "<leader>su" = {
+          action = "undo";
+          options.desc = "Search Undo";
+        };
         "<leader><space>" = {
           action = "find_files";
           options.desc = "Find project files";
         };
         "<leader>ff" = {
-          action = "find_files";
+          action = "find_files hidden=true";
           options.desc = "Find project files";
         };
         "<leader>/" = {
@@ -97,21 +99,17 @@
           action = "autocommands";
           options.desc = "Auto Commands";
         };
-        "<leader>sC" = {
+        "<leader>sc" = {
           action = "commands";
           options.desc = "Commands";
         };
-        "<leader>sD" = {
-          action = "diagnostics";
+        "<leader>sd" = {
+          action = "diagnostics bufnr=0";
           options.desc = "Workspace diagnostics";
         };
         "<leader>sh" = {
           action = "help_tags";
           options.desc = "Help pages";
-        };
-        "<leader>sH" = {
-          action = "highlights";
-          options.desc = "Search Highlight Groups";
         };
         "<leader>sk" = {
           action = "keymaps";
@@ -152,32 +150,4 @@
       };
     };
   };
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>fp";
-      action = "<cmd>Telescope projects<CR>";
-      options = {
-        desc = "Projects";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>sd";
-      action = "<cmd>Telescope diagnostics bufnr=0<cr>";
-      options = {
-        desc = "Document diagnostics";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>st";
-      action = "<cmd>TodoTelescope<cr>";
-      options = {
-        silent = true;
-        desc = "Todo (Telescope)";
-      };
-    }
-  ];
 }
