@@ -41,7 +41,6 @@
     ./ui/alpha.nix
     ./ui/bufferline.nix
     ./ui/general.nix
-    # ./ui/dressing-nvim.nix
     ./ui/flash.nix
     ./ui/indent-blankline.nix
     ./ui/lualine.nix
@@ -50,13 +49,11 @@
     ./ui/nui.nix
     ./ui/toggleterm.nix
 
-    ./util/image.nix
     ./util/nvim-colorizer.nix
     ./util/kulala.nix
     ./util/mini.nix
     ./util/nvim-autopairs.nix
     ./util/nvim-surround.nix
-    # ./util/todo-comments.nix
     ./util/plenary.nix
     ./util/persistence.nix
     ./util/project-nvim.nix
