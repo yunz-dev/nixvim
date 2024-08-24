@@ -13,23 +13,22 @@
       nixpkgs,
       ...
     }@inputs:
-    let
-      config = import ./config; # import the module directly
-    in
     flake-utils.lib.eachDefaultSystem (
       system:
       let
         nixvimLib = nixvim.lib.${system};
         pkgs = import nixpkgs { inherit system; };
         nixvim' = nixvim.legacyPackages.${system};
-        nvim = nixvim'.makeNixvimWithModule {
+        nixvimModule = {
           inherit pkgs;
-          module = config;
+          module = import ./config; # import the module directly
           # You can use `extraSpecialArgs` to pass additional arguments to your module files
           extraSpecialArgs = {
             # inherit (inputs) foo;
-          };
+            inherit inputs;
+          } // import ./lib;
         };
+        nvim = nixvim'.makeNixvimWithModule nixvimModule;
       in
       {
         checks = {
