@@ -131,22 +131,6 @@
           action = "colorscheme";
           options.desc = "Colorscheme preview";
         };
-        "gd" = {
-          action = "lsp_definitions";
-          options.desc = "Lsp definitions";
-        };
-        "gy" = {
-          action = "lsp_type_definitions";
-          options.desc = "Lsp type definitions";
-        };
-        "gr" = {
-          action = "lsp_references";
-          options.desc = "Lsp references";
-        };
-        "gi" = {
-          action = "lsp_implementations";
-          options.desc = "Lsp implementations";
-        };
       };
     };
   };
