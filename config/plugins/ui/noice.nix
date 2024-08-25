@@ -7,10 +7,6 @@
         "vim.lsp.util.stylize_markdown" = true;
         "cmp.entry.get_documentation" = true;
       };
-      hover.enabled = false;
-      message.enabled = false;
-      signature.enabled = false;
-      progress.enabled = false;
     };
 
     presets = {
@@ -20,7 +16,7 @@
       inc_rename = false;
       lsp_doc_border = false;
     };
-    notify.enabled = false;
+    notify.enabled = true;
     routes = [
       {
         filter = {
