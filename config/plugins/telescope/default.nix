@@ -91,6 +91,14 @@
           action = "oldfiles";
           options.desc = "Recent";
         };
+        "<c-p>" = {
+          mode = [
+            "n"
+            "i"
+          ];
+          action = "registers";
+          options.desc = "Select register to paste";
+        };
         "<leader>gc" = {
           action = "git_commits";
           options.desc = "commits";
