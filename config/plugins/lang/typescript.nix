@@ -23,8 +23,36 @@
 
     conform-nvim = {
       formattersByFt = {
-        typescript = [ "eslint_d" ];
-        javascript = [ "eslint_d" ];
+        javascript = [
+          [
+            "prettierd"
+            "prettier"
+          ]
+        ];
+        javascriptreact = [
+          [
+            "prettierd"
+            "prettier"
+          ]
+        ];
+        typescript = [
+          [
+            "prettierd"
+            "prettier"
+          ]
+        ];
+        typescriptreact = [
+          [
+            "prettierd"
+            "prettier"
+          ]
+        ];
+        svelte = [
+          [
+            "prettierd"
+            "prettier"
+          ]
+        ];
       };
 
       formatters.eslint_d = {
@@ -33,6 +61,10 @@
     };
 
     lsp.servers = {
+      svelte = {
+        enable = true;
+      };
+
       tsserver = {
         enable = true;
         filetypes = [
@@ -40,6 +72,7 @@
           "javascriptreact"
           "typescript"
           "typescriptreact"
+          "svelte"
         ];
 
         settings = {
