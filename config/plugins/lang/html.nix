@@ -2,7 +2,7 @@
 {
   plugins = {
     conform-nvim.settings = {
-      formattersByFt.html = [
+      formatters_by_ft.html = [
         "prettierd"
         "prettier"
       ];

@@ -2,7 +2,7 @@
 {
   plugins = {
     conform-nvim.settings = {
-      formattersByFt = {
+      formatters_by_ft = {
         sh = [ "shfmt" ];
       };
       formatters = {

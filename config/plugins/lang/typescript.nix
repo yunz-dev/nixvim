@@ -22,7 +22,7 @@
     ];
 
     conform-nvim.settings = {
-      formattersByFt = {
+      formatters_by_ft = {
         javascript = [
           [
             "prettierd"

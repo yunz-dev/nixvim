@@ -4,7 +4,7 @@
     lsp.servers.lua-ls.enable = true;
 
     conform-nvim.settings = {
-      formattersByFt = {
+      formatters_by_ft = {
         lua = [ "stylua" ];
       };
 

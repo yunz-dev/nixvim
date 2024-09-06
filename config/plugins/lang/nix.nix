@@ -9,7 +9,7 @@ in
     nix-develop.enable = true;
 
     conform-nvim.settings = {
-      formattersByFt = {
+      formatters_by_ft = {
         nix = [ "nixfmt-rfc-style" ];
       };
 

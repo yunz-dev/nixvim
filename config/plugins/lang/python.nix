@@ -4,7 +4,7 @@
     dap.extensions.dap-python.enable = true;
 
     conform-nvim.settings = {
-      formattersByFt.python = [
+      formatters_by_ft.python = [
         "ruff_format"
         "ruff_organize_imports"
       ];
