@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   plugins = {
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt.css = [
         "prettierd"
         "prettier"
@@ -12,17 +12,6 @@
         prettier.command = "${pkgs.nodePackages.prettier}/bin/prettier";
       };
     };
-
-    # lint = {
-    #   lintersByFt = {
-    #     css = [ "stylelint" ];
-    #   };
-    #   linters = {
-    #     stylelint = {
-    #       cmd = "${pkgs.stylelint}/bin/stylelint";
-    #     };
-    #   };
-    # };
 
     lsp.servers = {
       cssls = {

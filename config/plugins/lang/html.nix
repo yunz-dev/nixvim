@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   plugins = {
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt.html = [
         "prettierd"
         "prettier"

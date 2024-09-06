@@ -21,7 +21,7 @@
       }
     ];
 
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt = {
         javascript = [
           [

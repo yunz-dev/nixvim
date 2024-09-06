@@ -8,7 +8,7 @@ in
     hmts.enable = true;
     nix-develop.enable = true;
 
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt = {
         nix = [ "nixfmt-rfc-style" ];
       };

@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   plugins = {
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt = {
         json = [ "jq" ];
       };

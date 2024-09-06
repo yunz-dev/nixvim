@@ -3,7 +3,7 @@
   plugins = {
     dap.extensions.dap-python.enable = true;
 
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt.python = [
         "ruff_format"
         "ruff_organize_imports"

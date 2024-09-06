@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   plugins = {
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt = {
         cpp = [ "clang-format" ];
       };

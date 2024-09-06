@@ -3,7 +3,7 @@
   plugins = {
     lsp.servers.lua-ls.enable = true;
 
-    conform-nvim = {
+    conform-nvim.settings = {
       formattersByFt = {
         lua = [ "stylua" ];
       };
