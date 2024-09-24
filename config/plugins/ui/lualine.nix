@@ -1,34 +1,40 @@
+{ icons, ... }:
 {
   plugins.lualine = {
     enable = true;
-    alwaysDivideMiddle = true;
-    globalstatus = true; # have a single statusline at bottom of neovim instead of one for every window
-    ignoreFocus = [ "neo-tree" ];
-    extensions = [ "fzf" ];
-    disabledFiletypes.statusline = [ "dashboard" "alpha" ];
-    sectionSeparators = {
-      left = "";
-      right = "";
-    };
-    sections = {
-      lualine_a = [ "mode" ];
-      lualine_b = [ "branch" ];
-      lualine_y = [
-        {
-          name = "progress";
-          extraConfig = {
+    settings = {
+      options = {
+        always_divide_middle = true;
+        ignore_focus = [ "neo-tree" ];
+        globalstatus = true; # have a single statusline at bottom of neovim instead of one for every window
+        disabled_filetypes.statusline = [
+          "dashboard"
+          "alpha"
+        ];
+        section_separators = {
+          left = "";
+          right = "";
+        };
+      };
+      extensions = [ "fzf" ];
+      sections = {
+        lualine_a = [ "mode" ];
+        lualine_b = [ "branch" ];
+        lualine_y = [
+          "progress"
+          {
             separator = "";
-          };
-        }
-        {
-          name = "location";
-          padding = {
-            left = 0;
-            right = 1;
-          };
-        }
-      ];
-      lualine_z = [ ''" " .. os.date("%R")'' ];
+          }
+          "location"
+          {
+            padding = {
+              left = 0;
+              right = 1;
+            };
+          }
+        ];
+        lualine_z = [ ''"${icons.ui.Time}" .. os.date("%R")'' ];
+      };
     };
   };
   extraConfigLua = ''
@@ -84,10 +90,10 @@
                 {
                   "diagnostics",
                   symbols = {
-                    error = " ",
-                    warn  = " ",
-                    hint  = " ",
-                    info  = " ",
+                    error = "${icons.diagnostics.Error}",
+                    warn  = "${icons.diagnostics.Warning}",
+                    hint  = "${icons.diagnostics.Hint}",
+                    info  = "${icons.diagnostics.BoldInformation}",
                   },
                 },
                 { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
@@ -105,16 +111,16 @@
             color = ui.fg("Constant"),
           },
           {
-            function() return "  " .. require("dap").status() end,
+            function() return "${icons.diagnostics.Debug}" .. require("dap").status() end,
             cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = ui.fg("Debug"),
           },
           {
           "diff",
           symbols = {
-            added = " ",
-            modified = " ",
-            removed= " ",
+            added = "${icons.git.LineAdded}",
+            modified = "${icons.git.LineModified}",
+            removed= "${icons.git.LineRemoved}",
             },
           },
         }

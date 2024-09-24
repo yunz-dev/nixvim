@@ -1,16 +1,37 @@
 {
   diagnostics = {
-    BoldError = "";
-    Error = "";
-    BoldWarning = "";
-    Warning = "";
-    BoldInformation = "";
-    Information = "";
-    BoldQuestion = "";
-    Question = "";
-    BoldHint = "";
-    Hint = "";
-    Debug = "";
-    Trace = "✎";
+    BoldError = " ";
+    Error = " ";
+    BoldWarning = " ";
+    Warning = " ";
+    BoldInformation = " ";
+    Information = " ";
+    BoldQuestion = " ";
+    Question = " ";
+    BoldHint = " ";
+    Hint = " ";
+    Debug = " ";
+    Trace = "✎ ";
+  };
+
+  git = {
+    LineAdded = " ";
+    LineModified = " ";
+    LineRemoved = " ";
+    FileDeleted = " ";
+    FileIgnored = "◌ ";
+    FileRenamed = " ";
+    FileStaged = "✓ ";
+    FileUnmerged = " ";
+    FileUnstaged = " ";
+    FileUntracked = "★ ";
+    Diff = " ";
+    Repo = " ";
+    Octoface = " ";
+    Branch = " ";
+  };
+
+  ui = {
+    Time = " ";
   };
 }
