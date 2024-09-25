@@ -65,7 +65,7 @@
         enable = true;
       };
 
-      tsserver = {
+      ts-ls = {
         enable = true;
         filetypes = [
           "javascript"
