@@ -61,8 +61,14 @@
     };
 
     lsp.servers = {
-      svelte = {
+      svelte.enable = true;
+
+      eslint = {
         enable = true;
+        cmd = [
+          (lib.getExe pkgs.eslint_d)
+          "--stdio"
+        ];
       };
 
       ts-ls = {

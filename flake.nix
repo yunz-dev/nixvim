@@ -4,6 +4,17 @@
   inputs = {
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
+
+    # color tools
+    minty = {
+      url = "github:NvChad/minty";
+      flake = false;
+    };
+
+    volt = {
+      url = "github:NvChad/volt";
+      flake = false;
+    };
   };
 
   outputs =
@@ -24,9 +35,8 @@
           module = import ./config; # import the module directly
           # You can use `extraSpecialArgs` to pass additional arguments to your module files
           extraSpecialArgs = {
-            # inherit (inputs) foo;
             inherit inputs;
-          } // import ./lib;
+          } // import ./lib { inherit pkgs; };
         };
         nvim = nixvim'.makeNixvimWithModule nixvimModule;
       in

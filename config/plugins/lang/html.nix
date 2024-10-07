@@ -22,31 +22,6 @@
             "--stdio"
           ];
         };
-        # html = {
-        #   enable = true;
-        #   extraOptions.settings = {
-        #     html = {
-        #       format = {
-        #         templating = true;
-        #         wrapLineLength = 120;
-        #         wrapAttributes = "auto";
-        #       };
-        #       hover = {
-        #         documentation = true;
-        #         references = true;
-        #       };
-        #     };
-        #   };
-        # };
-
-        eslint = {
-          enable = true;
-          cmd = [
-            (lib.getExe pkgs.eslint_d)
-            "--stdio"
-          ];
-          filetypes = [ "html" ];
-        };
       };
 
       enabledServers = [

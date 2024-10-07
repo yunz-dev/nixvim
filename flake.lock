@@ -165,6 +165,22 @@
         "type": "github"
       }
     },
+    "minty": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728010839,
+        "narHash": "sha256-fow/jlV25tQFr2UFlWyjDPOt1GOZdRCSDkpe4axOlJ8=",
+        "owner": "NvChad",
+        "repo": "minty",
+        "rev": "8809b2c7c2edbeb3fa9c3b05bd2e89934d54f526",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NvChad",
+        "repo": "minty",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -267,8 +283,10 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "minty": "minty",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "volt": "volt"
       }
     },
     "systems": {
@@ -319,6 +337,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "volt": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728090995,
+        "narHash": "sha256-Pa0Ra9s+N6Hcy4L1j6GHEgbk8jQWzpQYfSYmDG/UnaY=",
+        "owner": "NvChad",
+        "repo": "volt",
+        "rev": "43f72b49037c191eb3cfe26ba7a5574b4bfce226",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NvChad",
+        "repo": "volt",
         "type": "github"
       }
     }
