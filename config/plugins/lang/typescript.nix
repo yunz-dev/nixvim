@@ -2,25 +2,6 @@
 {
 
   plugins = {
-    lsp.enabledServers = [
-      {
-        name = "emmet_language_server";
-        extraOptions = {
-          cmd = [
-            (lib.getExe pkgs.emmet-language-server)
-            "--stdio"
-          ];
-
-          filetypes = [
-            "javascript"
-            "javascriptreact"
-            "typescript"
-            "typescriptreact"
-          ];
-        };
-      }
-    ];
-
     conform-nvim.settings = {
       formatters_by_ft = {
         javascript = [
@@ -65,9 +46,32 @@
 
       eslint = {
         enable = true;
+        filetypes = [
+          "javascript"
+          "javascriptreact"
+          "javascript.jsx"
+          "typescript"
+          "typescriptreact"
+          "typescript.tsx"
+          "vue"
+          "html"
+          "markdown"
+          "json"
+          "jsonc"
+          "yaml"
+          "toml"
+          "xml"
+          "gql"
+          "graphql"
+          "svelte"
+          "css"
+          "less"
+          "scss"
+          "pcss"
+          "postcss"
+        ];
         cmd = [
           (lib.getExe pkgs.eslint_d)
-          "--stdio"
         ];
       };
 
@@ -84,7 +88,6 @@
         settings = {
           complete_function_calls = true;
           vtsls = {
-            enableMoveToFileCodeAction = true;
             autoUseWorkspaceTsdk = true;
             experimental = {
               completion = {
