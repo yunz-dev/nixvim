@@ -70,6 +70,7 @@
         ];
         cmd = [
           (lib.getExe pkgs.eslint_d)
+          "--stdio"
         ];
       };
 
