@@ -47,7 +47,7 @@
         ];
       };
 
-      ts-ls = {
+      ts_ls = {
         enable = true;
         filetypes = [
           "javascript"
