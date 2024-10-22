@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   plugins.conform-nvim = {
     enable = true;
@@ -9,11 +9,18 @@
       };
       formatters_by_ft = {
         # Use the "_" filetype to run formatters on filetypes that don't have other formatters configured.
-        "_" = [ "trim_whitespace" ];
+        "_" = [
+          "squeeze_blanks"
+          "trim_whitespace"
+          "trim_newlines"
+        ];
       };
       formatters = {
         _ = {
           command = "${pkgs.gawk}/bin/gawk";
+        };
+        squeeze_blanks = {
+          command = lib.getExe' pkgs.coreutils "cat";
         };
       };
     };

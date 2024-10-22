@@ -16,6 +16,7 @@
       codeAction = {
         showServerName = true;
         numShortcut = false;
+        onlyInCursor = false;
         keys = {
           exec = "<CR>";
           quit = [
@@ -51,8 +52,8 @@
       };
 
       scrollPreview = {
-        scrollUp = "<C-b>";
-        scrollDown = "<C-f>";
+        scrollUp = "<C-d>";
+        scrollDown = "<C-u>";
       };
     };
 
@@ -69,7 +70,15 @@
     {
       mode = "n";
       key = "K";
-      action = "<cmd>Lspsaga hover_doc<CR>";
+      # action = "<cmd>Lspsaga hover_doc<CR>";
+      action.__raw = ''
+        function()
+          local winid = require("ufo").peekFoldedLinesUnderCursor()
+          if not winid then
+            vim.cmd("Lspsaga hover_doc")
+          end
+        end
+      '';
       options = {
         desc = "Hover";
         silent = true;
@@ -77,7 +86,7 @@
     }
     {
       mode = "n";
-      key = "<leader>cw";
+      key = "<leader>lo";
       action = "<cmd>Lspsaga outline<CR>";
       options = {
         desc = "Outline";
@@ -86,7 +95,7 @@
     }
     {
       mode = "n";
-      key = "<leader>cr";
+      key = "<leader>lr";
       action = "<cmd>Lspsaga rename<CR>";
       options = {
         desc = "Rename";
@@ -125,7 +134,7 @@
       key = "gt";
       action = "<cmd>Lspsaga goto_type_definition<CR>";
       options = {
-        desc = "Type Definations";
+        desc = "Type Definitions";
         silent = true;
       };
     }
@@ -134,7 +143,7 @@
       key = "gpd";
       action = "<cmd>Lspsaga peek_definition<CR>";
       options = {
-        desc = "Peek Definations";
+        desc = "Peek Definitions";
         silent = true;
       };
     }
@@ -143,7 +152,7 @@
       key = "gpt";
       action = "<cmd>Lspsaga peek_type_definition<CR>";
       options = {
-        desc = "Peek Type Definations";
+        desc = "Peek Type Definitions";
         silent = true;
       };
     }
