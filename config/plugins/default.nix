@@ -1,5 +1,7 @@
 {
   imports = [
+    ./ai
+
     ./completion/cmp.nix
     ./completion/lspkind.nix
 

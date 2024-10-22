@@ -41,6 +41,7 @@
         sources = [
           { name = "nvim_lsp"; } # lsp
           { name = "luasnip"; }
+          { name = "copilot"; }
           {
             name = "buffer";
             # Words from other open buffers can also be suggested.
