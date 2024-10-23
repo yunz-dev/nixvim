@@ -6,7 +6,7 @@
       servers.typos_lsp.enable = true;
       keymaps.lspBuf = {
         "<c-k>" = "signature_help";
-        "i" = "implementation";
+        "gi" = "implementation";
       };
     };
     lint.enable = true;
