@@ -50,6 +50,7 @@
     ./ui/notify.nix
     ./ui/nui.nix
     ./ui/toggleterm.nix
+    ./ui/ufo.nix
 
     ./util/nvim-colorizer.nix
     ./util/kulala.nix
