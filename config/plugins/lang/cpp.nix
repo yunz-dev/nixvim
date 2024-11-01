@@ -19,6 +19,7 @@
         enable = true;
         cmd = [
           "clangd"
+          "--offset-encoding=utf-16"
           "--header-insertion=iwyu"
           "--background-index"
           "--clang-tidy"
