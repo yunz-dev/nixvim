@@ -5,6 +5,19 @@
   ];
 
   plugins = {
+    clipboard-image = {
+      enable = true;
+      clipboardPackage = pkgs.wl-clipboard;
+    };
+
+    image = {
+      enable = true;
+      integrations.markdown = {
+        clearInInsertMode = true;
+        onlyRenderImageAtCursor = true;
+      };
+    };
+
     markdown-preview = {
       enable = true;
     };
@@ -19,15 +32,18 @@
           "text"
         ];
 
-        settings = {
-          completionEnabled = true;
-        };
+        settings.completionEnabled = true;
 
         extraOptions = {
           checkFrequency = "save";
           language = "en-GB";
         };
       };
+    };
+
+    lint = {
+      lintersByFt.md = [ "markdownlint-cli2" ];
+      linters.markdownlint-cli2.cmd = "${pkgs.markdownlint-cli2}/bin/markdownlint-cli2";
     };
   };
 
