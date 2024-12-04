@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, helpers, ... }:
 {
   extraPackages = with pkgs; [
     marksman
@@ -11,7 +11,7 @@
     };
 
     image = {
-      enable = true;
+      enable = helpers.enableExceptInTests;
       integrations.markdown = {
         clearInInsertMode = true;
         onlyRenderImageAtCursor = true;
