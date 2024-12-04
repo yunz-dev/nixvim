@@ -49,10 +49,10 @@
     ./ui/noice.nix
     ./ui/notify.nix
     ./ui/nui.nix
+    ./ui/precognition.nix
     ./ui/toggleterm.nix
     ./ui/ufo.nix
 
-    ./util/nvim-colorizer.nix
     ./util/kulala.nix
     ./util/mini.nix
     ./util/nvim-autopairs.nix
