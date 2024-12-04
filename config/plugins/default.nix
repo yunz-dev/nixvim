@@ -1,6 +1,7 @@
 {
   imports = [
     # ./ai
+    ./ai/codeium.nix
 
     ./completion/cmp.nix
     ./completion/lspkind.nix
