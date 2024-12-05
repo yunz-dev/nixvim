@@ -1,3 +1,4 @@
+{ lib, helpers, ... }:
 {
   plugins = {
     # cmp-nvim-lsp.enable = true;
@@ -96,7 +97,9 @@
             name = "emoji";
             priority = 5;
           }
-          { name = "nixpkgs_maintainers"; }
+
+          # Disable this if running tests with nix flake check
+          (lib.mkIf helpers.enableExceptInTests { name = "nixpkgs_maintainers"; })
         ];
 
         window = {
