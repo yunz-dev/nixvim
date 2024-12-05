@@ -69,14 +69,6 @@
         gitbrowse.enabled = true;
         lazygit.enabled = true;
         profiler.enabled = true;
-        statuscolumn = {
-          enabled = true;
-
-          folds = {
-            open = true;
-            git_hl = config.plugins.gitsigns.enable;
-          };
-        };
       };
     };
   };
