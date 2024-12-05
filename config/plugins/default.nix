@@ -1,6 +1,5 @@
 {
   imports = [
-    # ./ai
     ./ai/codeium.nix
 
     ./completion/cmp.nix
@@ -17,7 +16,6 @@
     ./telescope
 
     ./git/gitsigns.nix
-    ./git/lazygit.nix
 
     ./lsp/conform.nix
     ./lsp/fidget.nix
@@ -63,5 +61,6 @@
     ./util/plenary.nix
     ./util/persistence.nix
     ./util/project-nvim.nix
+    ./util/snacks.nix
   ];
 }
