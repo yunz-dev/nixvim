@@ -4,7 +4,6 @@
 
 Akari
 
-
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
   <div align="center">
 
@@ -19,7 +18,7 @@ Akari
    <br>
 </div>
 </h1>
-<p align=center>Standalone nixvim flake based on Lazyvim with some more changes.</p>
+<p align=center>Standalone Nixvim flake based on Lazyvim with some more changes.</p>
 
 ---
 
@@ -32,8 +31,6 @@ Akari
 <p align="center"> Screenshots Circa: 2024-4-9</p>
 
 ---
-
-
 
 # 🔨 Installation
 
@@ -84,3 +81,9 @@ To test your configuration simply run the following command
 ```
 nix run .
 ```
+
+# :bookmark_tabs: Resources
+Some sick ass Nixvim setups that I use from.
+
+- [khaneliman/khanelivim](https://github.com/khaneliman/khanelivim/tree/main)
+- [niksingh710/nvix](https://github.com/niksingh710/nvix)
