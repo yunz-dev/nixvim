@@ -34,15 +34,13 @@ in
 
     lsp.servers.nixd = {
       enable = true;
-      extraOptions.settings = {
-        nixd = {
-          nixpkgs.expr = ''import (builtins.getFlake "${flake}").inputs.nixpkgs { }'';
-          options = {
-            nixos.expr = ''(builtins.getFlake "${flake}").nixosConfigurations.alfhiem.options'';
-            home_manager.expr = ''(builtins.getFlake "${flake}").homeConfigurations.alfhiem.options'';
-          };
-          flake_parts.expr = ''let flake = builtins.getFlake ("${flake}"); in flake.debug.options // flake.currentSystem.options'';
+      settings = {
+        nixpkgs.expr = ''import (builtins.getFlake "${flake}").inputs.nixpkgs { }'';
+        options = {
+          nixos.expr = ''(builtins.getFlake "${flake}").nixosConfigurations.alfhiem.options'';
+          home_manager.expr = ''(builtins.getFlake "${flake}").nixosConfigurations.alfhiem.options'';
         };
+        flake_parts.expr = ''let flake = builtins.getFlake ("${flake}"); in flake.debug.options // flake.currentSystem.options'';
       };
     };
   };
