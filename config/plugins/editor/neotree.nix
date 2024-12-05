@@ -1,3 +1,4 @@
+{ icons, ... }:
 {
   plugins.neo-tree = {
     enable = true;
@@ -19,15 +20,15 @@
     defaultComponentConfigs = {
       gitStatus = {
         symbols = {
-          added = " ";
-          conflict = "󰩌 ";
-          deleted = "󱂥";
-          ignored = " ";
-          modified = " ";
-          renamed = "󰑕";
-          staged = "󰩍";
-          unstaged = "";
-          untracked = "";
+          added = icons.git.LineAdded;
+          conflict = icons.git.FileConflict;
+          deleted = icons.git.FileDeleted;
+          ignored = icons.git.FileIgnored;
+          modified = icons.git.LineModified;
+          renamed = icons.git.FileRenamed;
+          staged = icons.git.FileStaged;
+          unstaged = icons.git.FileUnstaged;
+          untracked = icons.git.FileUntracked;
         };
       };
     };

@@ -16,15 +16,16 @@
 
   git = {
     LineAdded = " ";
-    LineModified = " ";
+    LineModified = " ";
     LineRemoved = " ";
-    FileDeleted = " ";
-    FileIgnored = "◌ ";
+    FileDeleted = "󱂥 ";
+    FileIgnored = " ";
     FileRenamed = " ";
+    FileConflict = "󰩌 ";
     FileStaged = "✓ ";
     FileUnmerged = " ";
     FileUnstaged = " ";
-    FileUntracked = "★ ";
+    FileUntracked = " ";
     Diff = " ";
     Repo = " ";
     Octoface = " ";
