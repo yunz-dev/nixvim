@@ -10,6 +10,7 @@
     ./editor/neotree.nix
     ./editor/undotree.nix
     ./editor/whichkey.nix
+    ./editor/yazi.nix
 
     ./theme
     ./luasnip
