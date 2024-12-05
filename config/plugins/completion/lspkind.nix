@@ -1,16 +1,22 @@
 {
   plugins.lspkind = {
     enable = true;
-    cmp = {
-      menu = {
-        nvim_lsp = "[LSP]";
-        nvim_lua = "[api]";
-        path = "[path]";
-        luasnip = "[snip]";
-        buffer = "[buffer]";
-        neorg = "[neorg]";
-      };
+
+    cmp.menu = {
+      nvim_lsp = "";
+      nvim_lua = "";
+      neorg = "[neorg]";
+      buffer = "";
+      calc = "";
+      git = "";
+      luasnip = "󰩫";
+      codeium = "󱜙";
+      copilot = "";
+      emoji = "󰞅";
+      path = "";
+      spell = "";
     };
+
     symbolMap = {
       Namespace = "󰌗";
       Text = "󰊄";
