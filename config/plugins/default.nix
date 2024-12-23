@@ -2,6 +2,7 @@
   imports = [
     ./ai/codeium.nix
 
+    # ./completion/blink.nix
     ./completion/cmp.nix
     ./completion/lspkind.nix
 
@@ -53,10 +54,10 @@
     ./ui/toggleterm.nix
     ./ui/ufo.nix
 
+    ./util/colorizer.nix
     ./util/debugprint.nix
     ./util/kulala.nix
     ./util/mini.nix
-    ./util/nvim-colorizer.nix
     ./util/nvim-autopairs.nix
     ./util/nvim-surround.nix
     ./util/plenary.nix
