@@ -37,6 +37,7 @@
     ./lang/typescript.nix
     ./lang/yaml.nix
     ./lang/golang.nix
+    ./lang/elixir.nix
 
     ./treesitter/treesitter.nix
     ./treesitter/treesitter-textobjects.nix
